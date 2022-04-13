@@ -1,18 +1,3 @@
-# Put student names into an array
-students =[
-  {name: "Dr. Hannibal Lecter", cohort: :november},
-  {name: "Darth Vader", cohort: :november},
-  {name: "Nurse Ratched", cohort: :november},
-  {name: "Michael Corleone", cohort: :november},
-  {name: "Alex DeLarge", cohort: :november},
-  {name: "The Wicked Witch of the West", cohort: :november},
-  {name: "Terminator", cohort: :november},
-  {name: "Freddy Kreuger", cohort: :november},
-  {name: "The Joker", cohort: :november},
-  {name: "Joffrey Baratheon", cohort: :november},
-  {name: "Norman Bates", cohort: :november}
-]
-
 #Define methods to print the header, names and footer
 def print_header
   puts "The students of Villains Academy"
@@ -27,7 +12,26 @@ def print(names)
   names.each {|name| puts "#{name[:name]} (#{name[:cohort]} cohort)"}
 end
 
+#Define method for user to input students
+def input_students
+  puts "Please enter the names of the students"
+  puts "To finish, just hit return twice"
+  # Create empty array to hold student names
+  students =[]
+  #Get the first name
+  name = gets.chomp
+  # If user enters a name, repeat this code
+  while !name.empty? do
+    # Add student hash to array
+    students << {name: name, cohort: :november}
+    puts "Now we have #{students.count} students"
+  # Get another name from the user
+  name = gets.chomp
+  end
+  students
+end
 # Call the methods to run the program
+students = input_students
 print_header
 print(students)
 print_footer(students)
