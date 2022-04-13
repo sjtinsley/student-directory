@@ -1,16 +1,16 @@
 # Put student names into an array
 students =[
-  "Dr. Hannibal Lecter",
-  "Darth Vader",
-  "Nurse Ratched",
-  "Michael Corleone",
-  "Alex DeLarge",
-  "The Wicked Witch of the West",
-  "Terminator",
-  "Freddy Kreuger",
-  "The Joker",
-  "Joffrey Baratheon",
-  "Norman Bates"
+  {name: "Dr. Hannibal Lecter", cohort: :november},
+  {name: "Darth Vader", cohort: :november},
+  {name: "Nurse Ratched", cohort: :november},
+  {name: "Michael Corleone", cohort: :november},
+  {name: "Alex DeLarge", cohort: :november},
+  {name: "The Wicked Witch of the West", cohort: :november},
+  {name: "Terminator", cohort: :november},
+  {name: "Freddy Kreuger", cohort: :november},
+  {name: "The Joker", cohort: :november},
+  {name: "Joffrey Baratheon", cohort: :november},
+  {name: "Norman Bates", cohort: :november}
 ]
 
 #Define methods to print the header, names and footer
@@ -24,7 +24,7 @@ def print_footer(names)
 end
 
 def print(names)
-  names.each {|name| puts name}
+  names.each {|name| puts "#{name[:name]} (#{name[:cohort]} cohort)"}
 end
 
 # Call the methods to run the program
