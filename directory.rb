@@ -9,7 +9,7 @@ def print_footer(names)
 end
 
 def print(names)
-  names.each {|name| puts "#{name[:name]} (#{name[:cohort]} cohort)"}
+  names.each_with_index {|(name, cohort), index| puts "#{index + 1}. #{name[:name]} (#{name[:cohort]} cohort)"}
 end
 
 #Define method for user to input students
@@ -32,6 +32,8 @@ def input_students
 end
 # Call the methods to run the program
 students = input_students
+less12 = students.select {|name, cohort| name[:name].length <= 12}
+startb = students.select {|name, cohort| name[:name].start_with?("B")}
 print_header
-print(students)
+print(less12)
 print_footer(students)
